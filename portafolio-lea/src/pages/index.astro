@@ -17,9 +17,30 @@ import '../styles/global.css';
     <main class="max-w-4xl mx-auto p-4">
       <AboutMe/>
       <Projects/>
-      <Contact/>
       <Technologies/>
+      <Contact/>
     </main>
     <Footer />
+      <!-- Botón para volver arriba -->
+  <button id="scrollTopBtn" class="hidden fixed bottom-8 right-8 bg-blue-500 text-white p-3 rounded-full shadow-lg hover:bg-blue-600 transition duration-300">
+    ↑
+  </button>
+  <script>
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+    
+    window.onscroll = function () {
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        scrollTopBtn.classList.remove('hidden');
+      } else {
+        scrollTopBtn.classList.add('hidden');
+      }
+    };
+
+    
+    scrollTopBtn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
   </body>
 </html>
