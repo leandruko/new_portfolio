@@ -1,0 +1,29 @@
+---
+// Datos para el footer
+const footerData = {
+  year: new Date().getFullYear(),
+  links: [
+    { name: "LinkedIn", url: "https://linkedin.com/in/tu-perfil", icon: "fab fa-linkedin" },
+    { name: "GitHub", url: "https://github.com/tu-usuario", icon: "fab fa-github" },
+    { name: "Twitter", url: "https://twitter.com/tu-usuario", icon: "fab fa-twitter" }
+  ]
+};
+---
+
+<footer class="bg-gray-800 text-white py-6">
+  <div class="container mx-auto flex justify-between items-center">
+    <!-- Copyright -->
+    <p class="text-sm">
+      &copy; {footerData.year} Leandro Javier Soto Miranda. All rights reserved.
+    </p>
+
+    <!-- Social Media Links -->
+    <div class="flex space-x-4">
+      {footerData.links.map(link => (
+        <a href={link.url} target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition duration-300">
+          <i class={`${link.icon} text-xl`}></i>
+        </a>
+      ))}
+    </div>
+  </div>
+</footer>

@@ -6,9 +6,18 @@ const contact = {
 };
 ---
 
-<section id="contact" class="my-8 p-4 bg-white rounded shadow">
-    <h2 class="text-2xl font-semibold">Contacto</h2>
-    <p class="mt-2">Si deseas ponerte en contacto conmigo, puedes enviarme un correo a <a href={`mailto:${contact.email}`} class="text-blue-500 hover:underline">{contact.email}</a>.</p>
-    <p class="mt-2">O puedes encontrarme en <a href={contact.linkedin} target="_blank" class="text-blue-500 hover:underline">LinkedIn</a>.</p>
-  </section>
-  
+<section id="contact" class="my-16 p-8 bg-gray-100 rounded-lg shadow-md">
+    <h2 class="text-3xl font-bold text-center">Contacto</h2>
+    <p class="mt-4 text-lg text-center">
+        Si deseas ponerte en contacto conmigo, puedes enviarme un correo a 
+        <a href={`mailto:${contact.email}`} class="text-blue-600 hover:text-blue-800 transition duration-300">
+          <i class="fas fa-envelope text-xl mr-2"></i>{contact.email}
+        </a>.
+    </p>
+    <p class="mt-4 text-lg text-center">
+        O puedes encontrarme en 
+        <a href={contact.linkedin} target="_blank" class="text-blue-600 hover:text-blue-800 transition duration-300">
+          <i class="fab fa-linkedin text-xl mr-2"></i>LinkedIn
+        </a>.
+    </p>
+</section>

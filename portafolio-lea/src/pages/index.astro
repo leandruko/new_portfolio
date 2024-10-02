@@ -2,7 +2,8 @@
 import AboutMe from '../components/AboutMe.astro';
 import Projects from '../components/Projects.astro';
 import Contact from '../components/Contact.astro';
-import '../styles/global.css'; // Importa el CSS de Tailwind
+import Footer from '../components/Footer.astro';
+import '../styles/global.css'; // 
 ---
 
 <html>
@@ -17,9 +18,8 @@ import '../styles/global.css'; // Importa el CSS de Tailwind
       <AboutMe />
       <Projects />
       <Contact />
+	  
     </main>
-    <footer class="bg-gray-800 text-white text-center p-4">
-      <p>&copy; {new Date().getFullYear()} Tu Nombre</p>
-    </footer>
+	<Footer />
   </body>
 </html>

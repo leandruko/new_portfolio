@@ -1,18 +1,24 @@
 ---
 // Aquí puedes agregar información sobre ti
 const about = {
-  name: "Tu Nombre",
-  description: "Soy un desarrollador web apasionado por crear experiencias únicas.",
+  name: "Leandro Soto",
+  description: "Soy un desarrollador web apasionado por crear experiencias únicas y soluciones efectivas. Me encanta trabajar con tecnologías modernas como JavaScript, React, Astro y CSS.",
   skills: ["JavaScript", "React", "Astro", "CSS"]
 };
 ---
-
-<section id="about" class="my-8 p-4 bg-white rounded shadow">
-    <h2 class="text-2xl font-semibold">Sobre Mí</h2>
-    <p class="mt-2">{about.description}</p>
-    <h3 class="mt-4 text-xl">Habilidades</h3>
-    <ul class="list-disc list-inside">
-      {about.skills.map(skill => <li>{skill}</li>)}
+<section id="about" class="my-16 p-8 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg shadow-lg">
+    <h2 class="text-3xl font-bold text-center">Sobre Mí</h2>
+    <p class="mt-4 text-lg text-center">{about.description}</p>
+    
+    <h3 class="mt-8 text-2xl text-center">Habilidades</h3>
+    <ul class="mt-4 flex justify-center space-x-4 text-lg">
+      {about.skills.map(skill => (
+        <li key={skill} class="flex items-center space-x-2">
+          {/* Ejemplo de íconos usando FontAwesome */}
+          <i class={`fab fa-${skill.toLowerCase()} text-2xl`}></i>
+          <span>{skill}</span>
+        </li>
+      ))}
     </ul>
-  </section>
-  
+</section>
+
