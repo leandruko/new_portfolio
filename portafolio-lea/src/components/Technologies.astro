@@ -1,0 +1,52 @@
+---
+const technologies = [
+  {
+    name: "JavaScript",
+    image: "https://path-to-your-image/javascript.png",
+  },
+  {
+    name: "React",
+    image: "https://path-to-your-image/react.png",
+  },
+  {
+    name: "Astro",
+    image: "https://path-to-your-image/astro.png",
+  },
+  {
+    name: "CSS",
+    image: "https://path-to-your-image/css.png",
+  },
+  {
+    name: "CSS",
+    image: "https://path-to-your-image/css.png",
+  },
+  {
+    name: "CSS",
+    image: "https://path-to-your-image/css.png",
+  },
+  {
+    name: "CSS",
+    image: "https://path-to-your-image/css.png",
+  },
+  {
+    name: "CSS",
+    image: "https://path-to-your-image/css.png",
+  },
+];
+---
+
+<section id="technologies" class="my-8 p-4 bg-white rounded shadow">
+    <h2 class="text-2xl font-semibold text-center">Tecnologías Utilizadas</h2>
+    <div class="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+      {technologies.map(tech => (
+        <div class="flex flex-col items-center">
+          <img 
+            src={tech.image} 
+            alt={tech.name} 
+            class="h-16 w-16 object-contain transition-transform duration-300 ease-in-out transform hover:scale-110"
+          />
+          <h3 class="mt-2 text-lg font-medium">{tech.name}</h3>
+        </div>
+      ))}
+    </div>
+  </section>
