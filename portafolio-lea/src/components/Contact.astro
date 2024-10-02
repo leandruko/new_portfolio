@@ -1,0 +1,14 @@
+---
+// Aquí puedes agregar tu información de contacto
+const contact = {
+  email: "tuemail@example.com",
+  linkedin: "https://linkedin.com/in/tu-perfil"
+};
+---
+
+<section id="contact" class="my-8 p-4 bg-white rounded shadow">
+    <h2 class="text-2xl font-semibold">Contacto</h2>
+    <p class="mt-2">Si deseas ponerte en contacto conmigo, puedes enviarme un correo a <a href={`mailto:${contact.email}`} class="text-blue-500 hover:underline">{contact.email}</a>.</p>
+    <p class="mt-2">O puedes encontrarme en <a href={contact.linkedin} target="_blank" class="text-blue-500 hover:underline">LinkedIn</a>.</p>
+  </section>
+  

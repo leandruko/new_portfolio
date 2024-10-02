@@ -1,0 +1,29 @@
+---
+// Aquí puedes agregar tus proyectos
+const projects = [
+  {
+    title: "Proyecto 1",
+    description: "Descripción del proyecto 1.",
+    link: "https://enlace-a-tu-proyecto1.com"
+  },
+  {
+    title: "Proyecto 2",
+    description: "Descripción del proyecto 2.",
+    link: "https://enlace-a-tu-proyecto2.com"
+  }
+];
+---
+
+<section id="projects" class="my-8 p-4 bg-white rounded shadow">
+    <h2 class="text-2xl font-semibold">Proyectos Realizados</h2>
+    <ul class="mt-4">
+      {projects.map(project => (
+        <li class="mb-4">
+          <h3 class="text-xl font-bold">{project.title}</h3>
+          <p>{project.description}</p>
+          <a href={project.link} target="_blank" class="text-blue-500 hover:underline">Ver Proyecto</a>
+        </li>
+      ))}
+    </ul>
+  </section>
+  

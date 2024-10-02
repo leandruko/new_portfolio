@@ -1,0 +1,18 @@
+---
+// Aquí puedes agregar información sobre ti
+const about = {
+  name: "Tu Nombre",
+  description: "Soy un desarrollador web apasionado por crear experiencias únicas.",
+  skills: ["JavaScript", "React", "Astro", "CSS"]
+};
+---
+
+<section id="about" class="my-8 p-4 bg-white rounded shadow">
+    <h2 class="text-2xl font-semibold">Sobre Mí</h2>
+    <p class="mt-2">{about.description}</p>
+    <h3 class="mt-4 text-xl">Habilidades</h3>
+    <ul class="list-disc list-inside">
+      {about.skills.map(skill => <li>{skill}</li>)}
+    </ul>
+  </section>
+  
