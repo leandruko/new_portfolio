@@ -4,20 +4,19 @@ const footerData = {
   year: new Date().getFullYear(),
   links: [
     { name: "LinkedIn", url: "https://linkedin.com/in/tu-perfil", icon: "fab fa-linkedin" },
-    { name: "GitHub", url: "https://github.com/tu-usuario", icon: "fab fa-github" },
-    { name: "Twitter", url: "https://twitter.com/tu-usuario", icon: "fab fa-twitter" }
+    { name: "GitHub", url: "https://github.com/tu-usuario", icon: "fab fa-github" }
   ]
 };
 ---
 
-<footer class="bg-gray-800 text-white py-6">
-  <div class="container mx-auto flex justify-between items-center">
+<footer class=" bg-opacity-70 backdrop-blur-md text-white py-6">
+  <div class="container mx-auto flex flex-col items-center">
     <!-- Copyright -->
-    <p class="text-sm">
-      &copy; {footerData.year} Leandro Javier Soto Miranda. All rights reserved.
+    <p class="text-sm text-center mb-4">
+      &copy; {footerData.year} leandruko. Todos los derechos reservados.
     </p>
 
-    <!-- Social Media Links -->
+    <!-- Links -->
     <div class="flex space-x-4">
       {footerData.links.map(link => (
         <a href={link.url} target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition duration-300">
