@@ -1,0 +1,44 @@
+---
+const navLinks = [
+  { name: "Inicio", href: "#about" },
+  { name: "Proyectos", href: "#projects" },
+  { name: "Contacto", href: "#contact" },
+];
+---
+
+<nav class="bg-gray-800 p-4 shadow-lg fixed w-full top-0 z-10">
+  <div class="container mx-auto flex justify-between items-center">
+    <!-- Logo -->
+    <a href="#" class="text-white text-2xl font-bold">
+      TuLogo
+    </a>
+
+    <!-- Links -->
+    <div class="hidden md:flex space-x-6">
+      {navLinks.map(link => (
+        <a href={link.href} class="text-white hover:text-blue-400 transition duration-300">
+          {link.name}
+        </a>
+      ))}
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button class="md:hidden text-white focus:outline-none" id="menu-btn">
+      <i class="fas fa-bars text-2xl"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="md:hidden mt-4 hidden" id="menu">
+    <ul class="space-y-4">
+      {navLinks.map(link => (
+        <li>
+          <a href={link.href} class="block text-white hover:text-blue-400 transition duration-300">
+            {link.name}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</nav>
+
