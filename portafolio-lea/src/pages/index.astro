@@ -1,7 +1,6 @@
 ---
 import AboutMe from '../components/AboutMe.astro';
 import Projects from '../components/Projects.astro';
-import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
 import Navbar from '../components/Navbar.astro';
 import Technologies from '../components/Technologies.astro';
@@ -10,7 +9,10 @@ import '../styles/global.css';
 
 <html>
   <head>
+    <meta charset="UTF-8">
     <title>Mi Portafolio</title>
+    <!-- Incluye el CDN de Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   </head>
   <body class="bg-gray-900 text-gray-800">
     <Navbar />
@@ -18,11 +20,10 @@ import '../styles/global.css';
       <AboutMe/>
       <Projects/>
       <Technologies/>
-      <Contact/>
     </main>
     <Footer />
       <!-- Botón para volver arriba -->
-  <button id="scrollTopBtn" class="hidden fixed bottom-8 right-8 bg-blue-500 text-white p-3 rounded-full shadow-lg hover:bg-blue-600 transition duration-300">
+  <button id="scrollTopBtn" class="hidden fixed bottom-8 right-8 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg shadow-lg hover:bg-blue-600 transition duration-300">
     ↑
   </button>
   <script>
