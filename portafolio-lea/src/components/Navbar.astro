@@ -1,43 +1,107 @@
 ---
-const navLinks = [
-  { name: "Inicio", href: "#about" },
-  { name: "Proyectos", href: "#projects" },
-  { name: "Tecnologías", href: "#technologies" },
-];
+const navItems = [
+  {
+    title: "Sobre mí",
+    label: "sobre-mi",
+    url: "/#about",
+  },
+  {
+    title: "Proyectos",
+    label: "proyectos",
+    url: "/#projects",
+  },
+  {
+    title: "Tecnologias",
+    label: "sobre-mi",
+    url: "/#technologies",
+  },
+  {
+    title: "Contacto",
+    label: "contacto",
+    url: "mailto:leasotompriv@gmail.com",
+  },
+]
 ---
 
-<nav class=" bg-opacity-70 backdrop-blur-md p-4 w-full top-0 z-10">
-  <div class="container mx-auto flex justify-between items-center">
-    <!-- Logo -->
-    <a href="#about" class="text-white text-2xl font-bold">
-      TuLogo
-    </a>
-
-    <!-- Links -->
-    <div class="hidden md:flex space-x-6">
-      {navLinks.map(link => (
-        <a href={link.href} class="text-white hover:text-blue-400 transition duration-300">
-          {link.name}
+<header
+  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
+>
+  <nav
+    class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center"
+  >
+    {
+      navItems.map((link) => (
+        <a
+          class="relative block px-2 py-2 transition hover:text-blue-500 dark:hover:text-blue-500"
+          aria-label={link.label}
+          href={link.url}
+        >
+          {link.title}
         </a>
-      ))}
-    </div>
+      ))
+    }
+  </nav>
+</header>
 
-    <!-- Mobile Menu Button -->
-    <button class="md:hidden text-white focus:outline-none" id="menu-btn">
-      <i class="fas fa-bars text-2xl"></i>
-    </button>
-  </div>
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const sections = document.querySelectorAll("section")
+    const navItems = document.querySelectorAll("header nav a")
 
-  <!-- Mobile Menu -->
-  <div class="md:hidden mt-4 hidden" id="menu">
-    <ul class="space-y-4">
-      {navLinks.map(link => (
-        <li>
-          <a href={link.href} class="block text-white hover:text-blue-400 transition duration-300">
-            {link.name}
-          </a>
-        </li>
-      ))}
-    </ul>
-  </div>
-</nav>
+    const callback = (entries: any[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navItems.forEach((item) => {
+            if (item.getAttribute("aria-label") == entry.target.id) {
+              item.classList.add("text-blue-500")
+            } else {
+              item.classList.remove("text-blue-500")
+            }
+          })
+        }
+      })
+    }
+
+    const observer = new IntersectionObserver(callback, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.3,
+    })
+
+    sections.forEach((section) => {
+      observer.observe(section)
+    })
+
+    // Cleanup function
+    document.onvisibilitychange = () => {
+      if (document.visibilityState === "hidden") {
+        observer.disconnect()
+      } else {
+        sections.forEach((section) => {
+          observer.observe(section)
+        })
+      }
+    }
+  })
+</script>
+
+<style>
+  nav {
+    animation: nav-shadown 1s linear both;
+    animation-timeline: scroll();
+    animation-range: 0 100px;
+  }
+
+  nav {
+    @apply dark:bg-gray-800/90 bg-white/50;
+  }
+
+  @keyframes nav-shadown {
+    0% {
+      @apply dark:bg-gray-800/0 bg-white/0;
+    }
+    to {
+      @apply shadow-lg ring-1 backdrop-blur ring-white/10;
+    }
+  }
+</style>
