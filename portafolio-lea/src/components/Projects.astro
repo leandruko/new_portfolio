@@ -34,11 +34,11 @@ const projects = [
 ];
 ---
 
-<section id="projects" class="my-16 p-8 rounded-lg shadow-lg">
+<section id="projects" class="my-16 p-8 rounded-lg">
     <h2 class="text-3xl font-bold text-center text-white">Proyectos realizados</h2>
     <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
       {projects.map(project => (
-        <div class=" p-6 rounded-lg shadow-md hover:shadow-indigo-500/40 transition-shadow duration-300">
+        <div class="bg-indigo-900 p-6 rounded-lg shadow-md hover:shadow-indigo-500/40 transition-shadow duration-300">
           <h3 class="text-xl font-bold mb-2 text-white">{project.title}</h3>
           <p class="mb-4 text-white">{project.description}</p>
           <a href={project.link} target="_blank" class="text-blue-600 hover:text-blue-800 transition-colors duration-300 font-semibold">
