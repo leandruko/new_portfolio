@@ -1,0 +1,50 @@
+---
+// proyectos
+const projects = [
+  {
+    title: "Sismos Chile",
+    description: "Proyecto de análisis de datos sobre el dataset de Sismos en Chile, para ver tendencias o patrones durante los últimos años.",
+    link: "https://github.com/leandruko/sismos-Chile"
+  },
+  {
+    title: "Monopoly ML",
+    description: "Proyecto de Machine Learning para predecir si el cliente se retira del banco.",
+    link: "https://github.com/leandruko/MonopolyMLproject"
+  },
+  {
+    title: "Weather Australia",
+    description: "Proyecto realizado en equipo para predecir si mañana llueve en Australia, mediante técnicas de análisis de datos y Machine Learning.",
+    link: "https://github.com/leandruko/MineriaDatosProject"
+  },
+  {
+    title: "Recomendación de películas",
+    description: "Proyecto realizado para recomendación de películas utilizando técnicas de filtrado colaborativo y similitud de coseno además del uso de Streamlit.",
+    link: "https://github.com/leandruko/recomendacion-peliculas"
+  },
+  {
+    title: "Cáncer de pulmón",
+    description: "Proyecto de machine learning con el fin de predecir si una persona tiene cáncer de pulmón en base a datos de pacientes.",
+    link: "https://github.com/leandruko/lung-cancer"
+  },
+  {
+    title: "Morosidad sistema financiero",
+    description: "Proyecto realizado con el fin de predecir si una persona quedara como deudora en el sistema.",
+    link: "https://github.com/leandruko/Morosidad-Sistema-Financiero"
+  },
+];
+---
+
+<section id="projects" class="my-16 p-8 rounded-lg">
+    <h2 class="text-4xl font-bold text-center text-white transition-transform duration-500 ease-in-out transform hover:scale-110">Proyectos realizados</h2>
+    <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+      {projects.map(project => (
+        <div class="p-10">
+          <h3 class="text-xl font-bold mb-2 text-white">{project.title}</h3>
+          <p class="mb-4 text-white">{project.description}</p>
+          <a href={project.link} target="_blank" class="text-white hover:text-pink-300 transition-colors duration-300 font-semibold">
+            Ver Proyecto &rarr;
+          </a>
+        </div>
+      ))}
+    </div>
+</section>

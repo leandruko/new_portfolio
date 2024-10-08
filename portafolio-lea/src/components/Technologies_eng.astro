@@ -1,0 +1,52 @@
+---
+const technologies = [
+  {
+    name: "JavaScript",
+    image: "/images/javascript.svg",
+  },
+  {
+    name: "Python",
+    image: "/images/python.svg",
+  },
+  {
+    name: "Django",
+    image: "/images/django.svg",
+  },
+  {
+    name: "Azure",
+    image: "/images/azure.svg",
+  },
+  {
+    name: "R",
+    image: "/images/R.svg",
+  },
+  {
+    name: "SQL server",
+    image: "/images/sql-server.svg",
+  },
+  {
+    name: "MySQL",
+    image: "/images/mysql.svg",
+  },
+  {
+    name: "PostgreSQL",
+    image: "/images/postgresql.svg",
+  },
+];
+---
+
+<section id="technologies" class="my-8 p-4 text-white rounded">
+    <h2 class="text-4xl font-semibold text-center mb-10 transition-transform duration-500 ease-in-out transform hover:scale-110">Tecnologías Utilizadas</h2>
+    <div class="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+      {technologies.map(tech => (
+        <div class="flex flex-col items-center">
+          <img 
+            src={tech.image} 
+            alt={tech.name} 
+            class="h-16 w-16 object-contain transition-transform duration-300 ease-in-out transform hover:scale-110"
+          />
+          <h3 class="mt-2 text-lg font-medium">{tech.name}</h3>
+        </div>
+      ))}
+    </div>
+  </section>
